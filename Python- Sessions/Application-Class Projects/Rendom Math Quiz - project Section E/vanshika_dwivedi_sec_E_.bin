@@ -1,0 +1,101 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "giHMCPnPdCbw",
+        "outputId": "2b35f8b6-985d-4d06-b715-a3704b9dae80"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "welcome to the math quiz\n",
+            "it's quiz time\n",
+            "you have a  5 questions.let's begin....\n",
+            "\n",
+            "('what is the square root of 9', 3.0)\n",
+            "('what is the square root of 9', 3.0)\n",
+            "('what is the square root of 9', 3.0)\n",
+            "('what is the square root of 9', 3.0)\n",
+            "('what is the square root of 9', 3.0)\n",
+            "Q1: what is the square root of 9\n"
+          ]
+        }
+      ],
+      "source": [
+        "import random\n",
+        "import datetime\n",
+        "import math\n",
+        "\n",
+        "questions=[(\"what is the square root of 9\",math.sqrt(9)),\n",
+        "          (\"what is the cube root of 641\",math.sqrt(641)),\n",
+        "          (\"what is the factorial of 10\",math.factorial(10)),\n",
+        "          (\"what is the value of e\",math.e),\n",
+        "          (\"what ist the value of pi\",math.pi)]\n",
+        "\n",
+        "\n",
+        "random.shuffle(questions)\n",
+        "print(\"welcome to the math quiz\")\n",
+        "print(\"it's quiz time\")\n",
+        "print(\"you have a  5 questions.let's begin....\\n\")\n",
+        "score=0\n",
+        "start_time=time.time()\n",
+        "for question in questions:\n",
+        "   print(questions[0])\n",
+        "for i,(q,ans) in enumerate(questions,1):\n",
+        "   print(f\"Q{i}: {q}\")\n",
+        "   user_answer = input(\"your answer:\")\n",
+        "\n",
+        "   try:\n",
+        "       if abs(float(user_answer) - float(ans)) < 0.01: # tolerance for float\n",
+        "           print(\"correct!\\n\")\n",
+        "           score += 1\n",
+        "       else:\n",
+        "           print(f\" wrong!correct Answer = {ans}\\n\")\n",
+        "\n",
+        "   except:\n",
+        "      print(f\"invalid input! correct answer = {ans}\\n\")\n",
+        "\n",
+        "      end_time = datetime.datetime.now()  # End timer\n",
+        "      time_taken = end_time-start_time\n",
+        "\n",
+        "\n",
+        "      print(\"quiz over!\")\n",
+        "      print(f\"your score: {score}/ {len(question)}\")\n",
+        "      print(f\"time taken: {time_taken.seconds}seconds\")\n",
+        "\n",
+        "\n",
+        ""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "PwK7N95JoiLA"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
